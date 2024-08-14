@@ -2,8 +2,8 @@
 
 <%= render @contact %>
 
-<div>
-  <%= link_to "Edit this contact", edit_contact_path(@contact) %> | <%= link_to
-  "Back to contacts", contacts_path %> <%= button_to "Destroy this contact",
-  @contact, method: :delete %>
+<div class="mt-4">
+  <%= link_to "Edit this contact", edit_contact_path(@contact) %> |
+  <%= link_to "Back to contacts", contacts_path %>
+  <%= button_to "Destroy this contact", @contact, method: :delete %>
 </div>
