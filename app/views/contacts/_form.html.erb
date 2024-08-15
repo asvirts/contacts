@@ -13,27 +13,27 @@
 </div>
 <% end %>
 
-<div>
-  <%= form.label :first_name, style: "display: block" %> <%= form.text_field :first_name %>
+<div class="my-3">
+  <%= form.text_field :first_name, placeholder: "First Name" %>
 </div>
 
-<div>
-  <%= form.label :last_name, style: "display: block" %> <%= form.text_field :last_name %>
+<div class="my-3">
+  <%= form.text_field :last_name, placeholder: "Last Name" %>
 </div>
 
-<div>
-  <%= form.label :email, style: "display: block" %> <%= form.text_field :email %>
+<div class="my-3">
+  <%= form.text_field :email, placeholder: "Email Address" %>
 </div>
 
-<div>
-  <%= form.label :phone, style: "display: block" %> <%= form.number_field :phone %>
+<div class="my-3">
+  <%= form.text_field :phone, placeholder: "Phone Number" %>
 </div>
 
-<div>
-  <%= form.label :threads, style: "display: block" %> <%= form.text_field :threads %>
+<div class="my-3">
+  <%= form.text_field :threads, placeholder: "Threads Username" %>
 </div>
 
 <div class="mt-4">
-  <%= form.submit %>
+  <%= form.submit class: "btn btn-dark" %>
 </div>
 <% end %>
