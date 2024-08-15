@@ -14,6 +14,14 @@
     </tr>
   </thead>
   <tbody>
-    <% @contacts.each do |contact| %> <%= render contact %> <% end %>
+    <% @contacts.each do |contact| %>
+    <tr>
+      <td><%= link_to contact.first_name, contact %></td>
+      <td><%= contact.last_name %></td>
+      <td><%= contact.email %></td>
+      <td><%= contact.phone %></td>
+      <td><%= contact.threads %></td>
+    </tr>
+    <% end %>
   </tbody>
 </table>

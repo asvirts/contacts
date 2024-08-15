@@ -1,12 +1,5 @@
 <p style="color: green"><%= notice %></p>
 
+<%= link_to "Back to contacts", contacts_path %>
+
 <%= render @contact %>
-
-<div class="mt-4">
-  <%= link_to "Edit this contact", edit_contact_path(@contact) %> |
-  <%= link_to "Back to contacts", contacts_path %>
-</div>
-
-<div class="mt-2">
-  <%= button_to "Delete this contact", @contact, method: :delete, class: "btn btn-dark" %>
-</div>
