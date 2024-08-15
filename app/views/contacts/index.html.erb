@@ -1,9 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Contacts</h1>
-<%= link_to "New contact", new_contact_path %>
-
-<table class="table">
+<table class="table table-striped my-3">
   <thead>
     <tr>
       <th>First name</th>
@@ -25,3 +22,5 @@
     <% end %>
   </tbody>
 </table>
+
+<%= link_to "New contact", new_contact_path, class: "btn btn-success" %>
