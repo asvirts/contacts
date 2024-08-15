@@ -1,3 +1,13 @@
+<% if user_signed_in? %>
+
 <%= link_to "Back to contacts", contacts_path %>
 
 <%= render @contact %>
+
+<% else %>
+
+<div class="alert alert-warning my-2" role="alert">
+  You need to sign in or sign up before continuing.
+</div>
+
+<% end %>
