@@ -1,24 +1,5 @@
-# README
+# Contacts
+![Unsplash hero](https://images.unsplash.com/photo-1665686377065-08ba896d16fd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Ruby on Rails
+This is a CRUD application created with Ruby on Rails that allows users to create an account and manage their own protected personal list of contacts stored in a SQL database.
