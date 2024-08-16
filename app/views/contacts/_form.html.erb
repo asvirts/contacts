@@ -33,6 +33,8 @@
   <%= form.text_field :threads, placeholder: "Threads Username" %>
 </div>
 
+<%= form.hidden_field :user_id, id: :contact_user_id, value: current_user.id %>
+
 <div class="mt-4">
   <%= form.submit class: "btn btn-dark" %>
 </div>
