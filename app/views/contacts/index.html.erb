@@ -7,6 +7,7 @@
       <th>Email</th>
       <th>Phone</th>
       <th>Threads</th>
+      <th> </th>
     </tr>
   </thead>
   <tbody>
@@ -15,10 +16,16 @@
       <% if contact.user == current_user %>
 
         <tr>
-          <td><%= link_to contact.first_name, contact %></td>
+          <td><%= link_to contact.first_name + " " + contact.last_name, contact %></td>
           <td><%= contact.email %></td>
           <td><%= contact.phone %></td>
-          <td><%= contact.threads %></td>
+          <td>
+            <% if !contact.threads.include? "@" %>@<% end %><%= contact.threads %>
+          </td>
+          <td class="d-flex">
+            <%= link_to "", edit_contact_path(contact), class: "bi bi-pencil mx-1" %>
+            <%= button_to "", contact, method: :delete, class: "bi bi-trash mx-1 border-0" %>
+          </td>
         </tr>
 
       <% end %>
