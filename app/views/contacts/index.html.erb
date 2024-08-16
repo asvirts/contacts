@@ -1,56 +1,64 @@
 <% if user_signed_in? %>
 
-<table class="table table-striped my-3">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Threads</th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @contacts.each do |contact| %>
+  <table class="table table-striped my-3">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Threads</th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @contacts.each do |contact| %>
 
-      <% if contact.user == current_user %>
+        <% if contact.user==current_user %>
 
-        <tr>
-          <td><%= link_to contact.first_name + " " + contact.last_name, contact %></td>
-          <td><%= contact.email %></td>
-          <td><%= contact.phone %></td>
-          <td>
-            <% if !contact.threads.include? "@" %>@<% end %><%= contact.threads %>
-          </td>
-          <td class="d-flex">
-            <%= link_to "", edit_contact_path(contact), class: "bi bi-pencil mx-1" %>
-            <%= button_to "", contact, method: :delete, class: "bi bi-trash mx-1 border-0" %>
-          </td>
-        </tr>
+          <tr>
+            <td>
+              <%= link_to contact.first_name + " " + contact.last_name, contact %>
+            </td>
+            <td>
+              <%= contact.email %>
+            </td>
+            <td>
+              <%= contact.phone %>
+            </td>
+            <td>
+              <% if !contact.threads.include? "@" %>@<% end %>
+                  <%= contact.threads %>
+            </td>
+            <td class="d-flex">
+              <%= link_to "" , edit_contact_path(contact), class: "bi bi-pencil mx-1" %>
+                <%= button_to "" , contact, method: :delete, class: "bi bi-trash mx-1 border-0" %>
+            </td>
+          </tr>
+
+          <% end %>
+
+            <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to "New contact" , new_contact_path, class: "btn btn-success" %>
+
+    <% else %>
+
+      <div class="row py-4 d-flex align-items-center">
+        <div class="col-md-6">
+          <%= image_tag ("/assets/surface-X1GZqv-F7Tw-unsplash.jpg"), class: "img-fluid rounded" %>
+        </div>
+        <div class="col-md-6">
+          <h1 class="fs-1">Your network, at your fingertips.</h1>
+          <h3 class="fw-light fst-italic">Your contacts, your way.</h3>
+          <p>Discover a smarter way to keep your contacts organized and accessible anytime, anywhere. Organize, update,
+            and reach out to your network like never before.</p>
+          <div class="d-flex gap-2">
+            <%= link_to "Sign In" , new_user_session_path, class: "btn btn-outline-primary" %>
+              <%= link_to "Sign Up" , new_user_registration_path, class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
 
       <% end %>
-      
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to "New contact", new_contact_path, class: "btn btn-success" %>
-
-<% else %>
-
-<div class="row py-4 d-flex align-items-center">
-    <div class="col-md-6">
-        <%= image_tag ("/assets/surface-X1GZqv-F7Tw-unsplash.jpg"), class: "img-fluid rounded" %>
-    </div>
-    <div class="col-md-6">
-        <h1 class="fs-1">Your network, at your fingertips.</h1>
-        <h3 class="fw-light fst-italic">Your contacts, your way.</h3>
-        <p>Discover a smarter way to keep your contacts organized and accessible anytime, anywhere. Organize, update, and reach out to your network like never before.</p>
-        <div class="d-flex gap-2">
-          <%= link_to "Sign In", new_user_session_path, class: "btn btn-outline-primary" %>
-          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %>
-        </div>
-    </div>
-</div>
-
-<% end %>
