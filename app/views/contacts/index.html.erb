@@ -26,12 +26,15 @@
               <%= contact.phone %>
             </td>
             <td>
-              <% if !contact.threads.include? "@" %>@<% end %>
-                  <%= contact.threads %>
+              <% if !contact.threads.include? "@" %>@<%= contact.threads %>
+                  <% else %>
+                    <%= contact.threads %>
+                      <% end %>
+
             </td>
             <td class="d-flex">
-              <%= link_to "" , edit_contact_path(contact), class: "bi bi-pencil mx-1" %>
-                <%= button_to "" , contact, method: :delete, class: "bi bi-trash mx-1 border-0" %>
+              <%= link_to "" , edit_contact_path(contact), class: "bi bi-pencil mx-1 text-primary" %>
+                <%= button_to "" , contact, method: :delete, class: "bi bi-trash mx-1 border-0 text-danger" %>
             </td>
           </tr>
 

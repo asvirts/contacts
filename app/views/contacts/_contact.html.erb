@@ -11,7 +11,10 @@
     <%= contact.phone %>
   </p>
   <p><strong>Threads:</strong>
-    <%= contact.threads %>
+    <% if !contact.threads.include? "@" %>@<%= contact.threads %>
+        <% else %>
+          <%= contact.threads %>
+            <% end %>
   </p>
 
   <div class="d-flex gap-2">
